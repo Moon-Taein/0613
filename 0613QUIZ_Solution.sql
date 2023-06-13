@@ -1,13 +1,14 @@
 -- HR 데이터베이스 employees 테이블 연습
+
 --  1. 부서(department_id) 그룹별 평균 연봉 조회하기
 SELECT DEPARTMENT_ID as '부서', avg(salary) '연봉 평균' 
 FROM employees
 group by DEPARTMENT_ID ; 
 
-select A.`부서`, A.`연봉 평균`
-from (	SELECT DEPARTMENT_ID as '부서', avg(salary) '연봉 평균' 
-		FROM employees
-		group by DEPARTMENT_ID ) as A;
+-- select A.`부서`, A.`연봉 평균`
+-- from (	SELECT DEPARTMENT_ID as '부서', avg(salary) '연봉 평균' 
+-- 		FROM employees
+-- 		group by DEPARTMENT_ID ) as A;
     
 --  2. 전체 연봉에 대해, 각 (개인별 연봉 / 전체 연봉) 비율을 계산해 조회하기
 SELECT first_name, last_name, salary, round(SALARY / (select sum(salary) from employees) * 100, 3) as '전체연봉에 대한 비율'
