@@ -31,11 +31,11 @@
 -- JSON	8100
 
 -- 날짜(시간)
--- YEAR	1 byte	1 byte
--- DATE	3 bytes	3 bytes
--- TIME	3 bytes	3 bytes + fractional seconds storage
--- DATETIME	8 bytes	5 bytes + fractional seconds storage
--- TIMESTAMP 4 bytes + fractional seconds storage
+-- 년도 YEAR	1 byte	1 byte
+-- 날짜 DATE	3 bytes	3 bytes
+-- 시간 TIME	3 bytes	3 bytes + fractional seconds storage
+-- 날짜+시간 DATETIME	8 bytes	5 bytes + fractional seconds storage
+-- 날짜+시간 TIMESTAMP 4 bytes + fractional seconds storage
 
 select current_date();
 select current_time();

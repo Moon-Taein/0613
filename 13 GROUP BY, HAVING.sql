@@ -15,6 +15,7 @@ SELECT Job_id, SUM(salary), AVG(salary), MAX(salary), MIN(salary)
 FROM employees
 WHERE Job_id LIKE 'AD%'
 GROUP BY Job_id;
+
 select job_id, sum(salary), avg(salary), max(SALARY), min(SALARY) 
 from employees 
 where job_id like 'ad%' 
@@ -39,5 +40,4 @@ order by `sum_salary`; -- 1옆에 ` 으로 감싸기
 select department_id, max(SALARY)
 from employees
 group by DEPARTMENT_ID
-having count(*) >= 10;
-
+having count(*) >= 10; -- 이거는 여기서 함수를 만든건가?

@@ -12,5 +12,6 @@ SELECT COUNT(DISTINCT JOB_ID) FROM employees;
 
 -- Department_id 중복 제거 후 행의 개수 집계
 SELECT COUNT(DISTINCT DEPARTMENT_ID) FROM employees;
+
 -- Salary가 10000 ~ 15000인 직원 행의 개수 집계
 SELECT COUNT(*) FROM employees WHERE salary BETWEEN 10000 AND 15000;

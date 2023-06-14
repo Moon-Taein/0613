@@ -30,7 +30,7 @@ select * from person where name = '마이콜';
 update person
 -- set + 변경할 칼럼
 	set name = '철수';
--- where 레코드 특정 시키기
+-- where 레코드로 특정 시키기
 -- where name = '마이콜';
 
 update person
@@ -39,5 +39,5 @@ update person
 
 -- primary key를 이용해서 간단하게 접근
 update person
-	set name = '길동'
+	set name = '길동', age = 10
     where no = 10;
