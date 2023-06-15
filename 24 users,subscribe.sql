@@ -58,8 +58,17 @@ create table menu (
 select * from owner;
 select * from store;
 select * from menu;
-select * from store_menu;
 select * from main_menu;
+select * from store_menu;
+
+
+-- select `상호명`, `사업자명` from owner, store
+-- where owner.no = store.사업자;
+-- select * from store_menu, store
+-- where store.no = storeid;
+select `상호명`, `사업자명`, (select `메뉴명` from menu where main_menu.mainmenuid = menu.no) as `주요메뉴`, `메뉴명`, `가격` 
+from menu, store_menu, store, owner, main_menu
+where store_menu.menuid = menu.no && store.no = store_menu.storeid && owner.no = store.사업자 && main_menu.storeid = store.no;
 
 insert into menu (`메뉴명`, `가격`) values ('페퍼로니', 11000)
 , ('치즈', 10000), ('불고기', 12000), ('하와이안', 13000) 
@@ -97,5 +106,3 @@ create table entire_store(
     , foreign key (`사업자명`) references store (`사업자`)
     , foreign key (`주요메뉴`) references main_menu (`mainmenuid`)
 );
-
-insert into entire_store (`상호명`, `사업자명`, `주요메뉴`, `메뉴명`, `가격`) values (), ;

@@ -39,3 +39,4 @@ where personid = (select no
 				  from person 
                   where name ='둘리');
 -- where personid = 10 이 형태로 만든거임
+
